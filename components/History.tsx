@@ -6,7 +6,7 @@ const timelineEvents = [
   {
     year: 2010,
     title: "Company Founded",
-    description: "LOU was established with a vision to revolutionize the tech industry.",
+    description: "TLA was established with a vision to revolutionize the tech industry.",
   },
   {
     year: 2013,
@@ -28,7 +28,7 @@ const timelineEvents = [
 
 export default function History() {
   const observerRef = useRef<IntersectionObserver | null>(null)
-  const timelineRef = useRef<HTMLDivElement>(null)
+  const timelineRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     observerRef.current = new IntersectionObserver(

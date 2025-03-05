@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import MobileMenu from "./MobileMenu"
 
 export default function Navbar() {
@@ -18,13 +19,20 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-orange-500 bg-opacity-90 shadow-md" : "bg-transparent"
+        isScrolled ? "bg-orange-400 bg-opacity-90 shadow-md" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="text-2xl font-bold text-white">
-            LOU
+          <Link href="/" className="relative w-12 h-12 flex items-center">
+            <Image
+              src="/image/logo.png"
+              alt="TLA Logo"
+              width={48}
+              height={48}
+              className="object-contain"
+              priority
+            />
           </Link>
           <div className="hidden md:flex items-center justify-center flex-1">
             <Link href="#home" className="text-white hover:text-orange-200 transition-colors duration-300 px-3 py-2">
